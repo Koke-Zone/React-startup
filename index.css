@@ -1,3 +1,83 @@
-#main-child1{
-    background-color: antiquewhite;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
 }
+header.header {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: black;
+}
+.header .logo {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.header .logo .heading {
+  color: #f0eeec;
+  margin-left: 10px;
+}
+
+.nav-bar ul {
+  display: flex;
+  align-content: center;
+  justify-content: space-evenly;
+}
+
+.nav-bar ul li {
+  padding: 15px;
+  list-style-type: none;
+}
+
+.nav-bar ul li a {
+  text-decoration: none;
+  color: #f0eeec;
+}
+
+.container {
+  padding: 10px;
+  margin: 10px;
+}
+.container h2 {
+  margin: 5px;
+}
+
+.food-container {
+    grid-template-columns: 20% 20% 20% 20%20%;
+    row-gap: 10px;
+    padding: 10px;
+    display: grid;
+}
+
+.food-card {
+  margin: 10px;
+  border: 1px solid #a59f9f40;
+  padding: 10px;
+}
+.food-card img {
+    max-width: 100%;
+    
+}
+.food-card:hover {
+  box-shadow: 10px 13px 7px 0px #1413130f;
+  cursor: pointer;
+}
+
+.footer {
+  background: black;
+  color: white;
+  padding: 20px 0;
+  margin-top: 50px;
+  text-align: center;
+}
+.food-card h4{
+    margin: 10px 0;
+}
+.food-card h4, .food-card span {
+    margin: 10px 0;
+    display: flex;
+}
+
