@@ -1,14 +1,15 @@
 import { RES_URL_PIC } from "./utilis/constaints";
+
 const RestCard = (props) => {
   const { propData } = props;
   const {
     name,
     cuisines,
     avgRating,
-    deliveryTime,
-    costForTwoString,
+    costForTwo,
     cloudinaryImageId,
-  } = propData.data;
+  } = propData.info;
+  const { slaString } = propData.info.sla;
   return (
     <div className="food-card">
       <img
@@ -20,13 +21,13 @@ const RestCard = (props) => {
       <h3>{name}</h3>
       <span>{cuisines.join(", ")}</span>
       <span>
-        Rating: &nbsp;<b>{avgRating}</b>
+        Rating: &nbsp;<b>{avgRating} stars</b>
       </span>
       <span>
-        Delivery Time: &nbsp;<b>{deliveryTime} minutes</b>
+        Delivery Time: &nbsp;<b>{slaString}</b>
       </span>
       <span>
-        Price: &nbsp;<b>{costForTwoString}</b>
+        Price: &nbsp;<b>{costForTwo}</b>
       </span>
     </div>
   );
