@@ -16,4 +16,9 @@
  # episode 05
    https://docs.google.com/document/d/1cHjIHBWqa3rwfGvsXJ7v8GtGkNQZFHOrhWsBge90iWg/edit?usp=sharing
 
+ # episode 06
+   https://docs.google.com/document/d/1ol7LsQ7QH9JNh3-m5_2s8N2SBOrK-PpMHsGHjuiSBMg/edit?usp=sharing
+
+ # episode 07
+   https://docs.google.com/document/d/1g4xMLsL6tdcfAYn0C4yvnmyaNFSRR2aV0acRPazSa_A/edit?usp=sharing
    

@@ -2,13 +2,8 @@ import { RES_URL_PIC } from "./utilis/constaints";
 
 const RestCard = (props) => {
   const { propData } = props;
-  const {
-    name,
-    cuisines,
-    avgRating,
-    costForTwo,
-    cloudinaryImageId,
-  } = propData.info;
+  const { name, cuisines, avgRating, costForTwo, cloudinaryImageId } =
+    propData.info;
   const { slaString } = propData.info.sla;
   return (
     <div className="food-card">

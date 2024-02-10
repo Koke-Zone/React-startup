@@ -1,10 +1,12 @@
 import RestCard from "./RestCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { SWIGGY_API } from "./utilis/constaints";
+import { Link } from "react-router-dom";
 
 const BodyResturanat = () => {
   let [myRestaurantList, setmyRestaurantList] = useState([]);
-  const [filteredRes, setfilteredRes ] = useState([]);
+  const [filteredRes, setfilteredRes] = useState([]);
 
   let [inputVal, setinoutVal] = useState("");
 
@@ -13,9 +15,7 @@ const BodyResturanat = () => {
   });
 
   const fetchData = async () => {
-    const data = await fetch(
-      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(SWIGGY_API);
     const jsonData = await data.json();
     const restaurants =
       jsonData.data.cards[1]?.card?.card?.gridElements?.infoWithStyle
@@ -28,24 +28,33 @@ const BodyResturanat = () => {
   //  return <Shimmer />
   // }
 
-  return myRestaurantList.length === 0 ? <Shimmer /> : (
+  return myRestaurantList.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="main-body">
       <div className="container">
         <div className="filer">
           <div className="filterInput">
-          <input type="Search" className="search" value={inputVal} 
-          onChange={
-            (e)=>{
-              setinoutVal(e.target.value);
-          }} />
-          <button onClick={()=>{
-            const filterResturanats =  myRestaurantList.filter(
-              (res) => res.info.name.toLowerCase().includes(inputVal.toLowerCase())
-            )
-            setfilteredRes(filterResturanats);
-          }}>Search</button>
+            <input
+              type="Search"
+              className="search"
+              value={inputVal}
+              onChange={(e) => {
+                setinoutVal(e.target.value);
+              }}
+            />
+            <button
+              onClick={() => {
+                const filterResturanats = myRestaurantList.filter((res) =>
+                  res.info.name.toLowerCase().includes(inputVal.toLowerCase())
+                );
+                setfilteredRes(filterResturanats);
+              }}
+            >
+              Search
+            </button>
           </div>
-        
+
           <button
             className="btn-filter"
             onClick={() => {
@@ -55,12 +64,14 @@ const BodyResturanat = () => {
               setmyRestaurantList(myRestaurantList);
             }}
           >
-            Top Rated Restuarants 
+            Top Rated Restuarants
           </button>
         </div>
         <div className="food-container">
           {filteredRes.map((restaurantList) => (
-            <RestCard key={restaurantList.info.id} propData={restaurantList} />
+            <Link key={restaurantList.info.id} to={"/resturants/" + restaurantList.info.id}>
+              <RestCard propData={restaurantList} />
+            </Link>
           ))}
         </div>
       </div>
