@@ -82,6 +82,9 @@ header.header {
   margin: 10px;
   border: 1px solid #a59f9f40;
   padding: 10px;
+    border-radius: 25px;
+    transition: 0.1s ease-in;
+    position: relative;
 }
 .shimmer-card {
   width: 250px;
@@ -93,10 +96,12 @@ header.header {
 
 .food-card img {
   max-width: 100%;
+  border-radius:25px;
 }
 .food-card:hover {
   box-shadow: 10px 13px 7px 0px #1413130f;
   cursor: pointer;
+  padding: 12px;
 }
 
 .footer {
@@ -113,4 +118,14 @@ header.header {
 .food-card span {
   margin: 10px 0;
   display: flex;
+  align-items: center;
 }
+.food-card > .price{
+  color: #fff;
+  background: #ff1248;
+  padding: 10px;
+  position: absolute;
+  top: 88px; 
+}
+
+

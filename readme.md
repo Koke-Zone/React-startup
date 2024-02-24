@@ -22,3 +22,7 @@
  # episode 07
    https://docs.google.com/document/d/1g4xMLsL6tdcfAYn0C4yvnmyaNFSRR2aV0acRPazSa_A/edit?usp=sharing
    
+ # episode 08
+   https://docs.google.com/document/d/1EnFJvD2_uwai5TM9WthrsPRvu8ZmALwn1_XT33evpOM/edit?usp=sharing
+
+  
