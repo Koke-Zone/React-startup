@@ -47,7 +47,7 @@ const BodyResturanat = () => {
               onClick={() => {
                 const filterResturanats = myRestaurantList.filter((res) =>
                   res.info.name.toLowerCase().includes(inputVal.toLowerCase())
-                );
+                );  
                 setfilteredRes(filterResturanats);
               }}
             >

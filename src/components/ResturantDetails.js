@@ -24,7 +24,7 @@ const ResturantDetails = () => {
   const { name, cuisines, costForTwo } = restData?.cards[0]?.card?.card?.info;
   const { itemCards } =
     restData?.cards[2].groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
-  // console.log(itemCards);
+  console.log(itemCards);
   return (
     <div className="rest-details">
       <div className="container">
