@@ -1,30 +1,31 @@
-import { useState, useEffect } from "react";
-import { RESTAPID } from "./utilis/constaints";
+// import { useState, useEffect } from "react";
+// import { RESTAPID } from "./utilis/constaints";
 import { useParams } from "react-router-dom";
 import Shimmer from "./Shimmer";
+import useResturantDetails from "./utilis/useResturantDetails";
 
 const ResturantDetails = () => {
-  const [restData, setresData] = useState(null);
+  // const [restData, setresData] = useState(null);
 
   // use this hook to get resId
   const { resId } = useParams();
+  const restData  = useResturantDetails(resId);
 
-  useEffect(() => {
-    myApi();
-  }, []);
+  // useEffect(() => {
+  //   myApi();
+  // }, []);
 
-  const myApi = async () => {
-    const data = await fetch(RESTAPID + resId);
-    const json = await data.json();
-    const resturant_data = json.data;
-    setresData(resturant_data);
-  };
+  // const myApi = async () => {
+  //   const data = await fetch(RESTAPID + resId);
+  //   const json = await data.json();
+  //   const resturant_data = json.data;
+  //   setresData(resturant_data);
+  // };
 
   if (restData === null) return <Shimmer />;
   const { name, cuisines, costForTwo } = restData?.cards[0]?.card?.card?.info;
   const { itemCards } =
     restData?.cards[2].groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
-  console.log(itemCards);
   return (
     <div className="rest-details">
       <div className="container">
@@ -34,7 +35,6 @@ const ResturantDetails = () => {
         </p>
         <div className="res-foods">
           {itemCards?.map((item) => {
-            console.log(item?.card?.info?.name);
             return <p key={item?.card?.info?.id}>{item?.card?.info?.name}</p>;
           })}
         </div>
