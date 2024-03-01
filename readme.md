@@ -25,4 +25,6 @@
  # episode 08
    https://docs.google.com/document/d/1EnFJvD2_uwai5TM9WthrsPRvu8ZmALwn1_XT33evpOM/edit?usp=sharing
 
-  
+ # episode 09
+   https://docs.google.com/document/d/1HH6t4C0HOnBKuMuQJNx_LMimZd5hRmmCanggAIDuhIo/edit?usp=sharing
+   
