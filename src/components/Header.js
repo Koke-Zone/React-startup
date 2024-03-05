@@ -7,38 +7,65 @@ const Header = () => {
   const [loginbtn, setloginbtn] = useState("Login");
   const status = useOnlineStatus();
   return (
-    <header className="header">
-      <div className="logo">
+    <header className="header flex items-center justify-between bg-cyan-700">
+      <div className="logo flex items-center">
         <Link to="/">
-          <img src={logo} width={50} height={50} alt="logo" />
+          <img src={logo} className="w-20 p-2 m-2" alt="logo" />
         </Link>
         <Link to="/">
-          <h1 className="heading">Food Point</h1>
+          <h1 className="heading font-extrabold font-dancingScript text-4xl text-yellow-50 border-transparent pb-2">
+            Food Point
+          </h1>
         </Link>
       </div>
       <div className="navigation">
         <nav className="nav-bar">
-          <ul>
-            <li>
-              <Link>Online Status: { status ? "💚" : "💓"  }</Link>
+          <ul className="flex justify-between items-center p-4 m-4">
+            <li className="p-2 m-2 font-dancingScript font-semibold text-yellow-50">
+              Online Status: {status ? "💚" : "💓"}
             </li>
-            <li>
-              <Link to="/">HOME</Link>
+            <li className="p-2 m-2">
+              <Link
+                to="/"
+                className="font-semibold text-yellow-50 border-transparent pb-2 border-b-2 hover:border-customPink"
+              >
+                HOME
+              </Link>
             </li>
-            <li>
-              <Link to="/service">SERVICES</Link>
+            <li className="p-2 m-2">
+              <Link
+                to="/service"
+                className="font-semibold text-yellow-50 border-transparent pb-2 border-b-2 hover:border-customPink"
+              >
+                SERVICES
+              </Link>
             </li>
-            <li>
-              <Link to="/about">ABOUTUS</Link>
+            <li className="p-2 m-2">
+              <Link
+                to="/about"
+                className="font-semibold text-yellow-50 border-transparent pb-2 border-b-2 hover:border-customPink"
+              >
+                ABOUT US
+              </Link>
             </li>
-            <li>
-              <Link to="/contact">CONTACTUS</Link>
+            <li className="p-2 m-2">
+              <Link
+                to="/contact"
+                className="font-semibold text-yellow-50 border-transparent pb-2 border-b-2 hover:border-customPink"
+              >
+                CONTACT US
+              </Link>
             </li>
-            <li>
-              <Link to="/grocery">GROCERY</Link>
+            <li className="p-2 m-2">
+              <Link
+                to="/grocery"
+                className="font-semibold text-yellow-50 border-transparent pb-2 border-b-2 hover:border-customPink"
+              >
+                GROCERY
+              </Link>
             </li>
             <button
-              className="btn-login"
+              className="font-dancingScript font-semibold text-yellow-50 border-transparent bg-customPink p-4 w-auto"
               onClick={() => {
                 loginbtn === "Login"
                   ? setloginbtn("logout")

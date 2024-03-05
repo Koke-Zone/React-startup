@@ -28,3 +28,5 @@
  # episode 09
    https://docs.google.com/document/d/1HH6t4C0HOnBKuMuQJNx_LMimZd5hRmmCanggAIDuhIo/edit?usp=sharing
    
+ # episode 10
+   https://docs.google.com/document/d/1UVt15sAG89mJAvP_QAZFpnTQOB_PY0x3F_CF7Sr0LPg/edit?usp=sharing

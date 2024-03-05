@@ -43,17 +43,17 @@ const BodyResturanat = () => {
   ) : (
     <div className="main-body">
       <div className="container">
-        <div className="filer">
+        <div className="filer flex justify-between p-3 m-3">
           <div className="filterInput">
             <input
               type="Search"
-              className="search"
+              className="search rounded-md border-0 py-2 px-4 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Search Food" 
               value={inputVal}
               onChange={(e) => {
                 setinoutVal(e.target.value);
               }}
             />
-            <button
+            <button className="font-dancingScript text-cyan-50 bg-cyan-700 p-2 w-40 ml-2 rounded-md"
               onClick={() => {
                 const filterResturanats = myRestaurantList.filter((res) =>
                   res.info.name.toLowerCase().includes(inputVal.toLowerCase())
@@ -66,7 +66,7 @@ const BodyResturanat = () => {
           </div>
 
           <button
-            className="btn-filter"
+            className="text-yellow-50 bg-cyan-700 p-2 w-80 rounded-md font-dancingScript"
             onClick={() => {
               ResList = myRestaurantList.filter(
                 (res) => res.info.avgRating > 4.5
@@ -77,9 +77,9 @@ const BodyResturanat = () => {
             Top Rated Restuarants
           </button>
         </div>
-        <div className="food-container">
+        <div className="food-container flex justify-evently flex-wrap mt-10 mb-20 mx-auto p-1 border-cyan-50 w-10/12">
           {filteredRes.map((restaurantList) => (
-            <Link
+            <Link className="w-1/4"
               key={restaurantList.info.id}
               to={"/resturants/" + restaurantList.info.id}
             >
