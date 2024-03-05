@@ -19,9 +19,9 @@ class About extends Component {
   // console.log("parent render is called");
 
     return (
-      <div className="aboutUs">
+      <div className="aboutUs m-3 p-3">
         <div className="container">
-          <h1>About Us</h1>
+          <h1 className="text-xl my-3">About Us</h1>
           <p>Hello this is about Us page</p>
           <ClassName name = {"Sana Class"} loc = {"sana-loc"}/>
         </div>
