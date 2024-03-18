@@ -1,4 +1,4 @@
-import RestCard from "./RestCard";
+import RestCard, {promotedData} from "./RestCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { SWIGGY_API } from "./utilis/constaints";
@@ -11,6 +11,8 @@ const BodyResturanat = () => {
 
   let [inputVal, setinoutVal] = useState("");
 
+  const RestureantCardPromoted = promotedData(RestCard);
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -18,15 +20,18 @@ const BodyResturanat = () => {
   const fetchData = async () => {
     const data = await fetch(SWIGGY_API);
     const jsonData = await data.json();
+    // console.log(jsonData);
     setmyRestaurantList(
       jsonData.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
+        
     );
     setfilteredRes(
       jsonData.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
   };
+
 
   // if(myRestaurantList.length === 0){
   //  return <Shimmer />
@@ -83,13 +88,21 @@ const BodyResturanat = () => {
               key={restaurantList.info.id}
               to={"/resturants/" + restaurantList.info.id}
             >
+              { 
+              restaurantList?.info?.aggregatedDiscountInfoV3?.header === "30% OFF" ? (
+                <RestureantCardPromoted propData={restaurantList} />
+              ) : (
               <RestCard propData={restaurantList} />
+              )
+              }
+              
             </Link>
           ))}
         </div>
       </div>
     </div>
   );
+
 };
 
 export default BodyResturanat;

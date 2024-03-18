@@ -1,4 +1,4 @@
-import React, {lazy, Suspense} from "react";
+import React, {lazy, Suspense, useEffect, useState} from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import BodyResturanat from "./components/BodyResturanat";
@@ -9,19 +9,35 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Error from "./components/Error";
 // import Grocery from "./components/Grocery";
+import UserContext from "./components/utilis/userContext";
 
 const Grocery = lazy(()=> import('./components/Grocery'));
 
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 const MainFunction = () => {
+
+  const [userName, setUserName] = useState();
+
+useEffect(() => {
+    const data = {
+    name: "Sunny Sagar",
+  }
+  setUserName(data.name);
+},[]);
+
   return (
+    <UserContext.Provider value={{loggedUser:userName}}>
     <div className="main">
       {/* all 3 ways are same to call functional componenets */}
+      <UserContext.Provider value={{loggedUser:"Sanaullah"}}>
       <Header />
+      </UserContext.Provider>
       <Outlet />
       <Footer></Footer>
     </div>
+    </UserContext.Provider>
+          
   );
 };
 
