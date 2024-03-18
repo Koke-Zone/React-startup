@@ -30,3 +30,7 @@
    
  # episode 10
    https://docs.google.com/document/d/1UVt15sAG89mJAvP_QAZFpnTQOB_PY0x3F_CF7Sr0LPg/edit?usp=sharing
+
+ # episode 11
+   https://docs.google.com/document/d/1nuhaQEzOLe3QYnqmJfpl9bCW0mqT4zVcVfhkAjMnD4Y/edit?usp=sharing
+   

@@ -1,6 +1,7 @@
 import Users from "./User";
 import ClassName from "./ClassName";
 import { Component } from "react";
+import UserContext from "./utilis/userContext";
 
 // most of people extends Compnent instead of React.component 
 class About extends Component {
@@ -22,6 +23,10 @@ class About extends Component {
       <div className="aboutUs m-3 p-3">
         <div className="container">
           <h1 className="text-xl my-3">About Us</h1>
+          <p>User</p>
+          <UserContext.Consumer>
+            {({loggedUser})=> <div>{loggedUser}</div> }
+          </UserContext.Consumer>
           <p>Hello this is about Us page</p>
           <ClassName name = {"Sana Class"} loc = {"sana-loc"}/>
         </div>
