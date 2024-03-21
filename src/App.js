@@ -10,10 +10,13 @@ import Footer from "./components/Footer";
 import Error from "./components/Error";
 // import Grocery from "./components/Grocery";
 import UserContext from "./components/utilis/userContext";
+import { Provider } from "react-redux";
 
 const Grocery = lazy(()=> import('./components/Grocery'));
 
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import appStore from "./components/utilis/appStore";
+import Cart from "./components/Cart";
 
 const MainFunction = () => {
 
@@ -27,6 +30,7 @@ useEffect(() => {
 },[]);
 
   return (
+    <Provider store={appStore}>
     <UserContext.Provider value={{loggedUser:userName}}>
     <div className="main">
       {/* all 3 ways are same to call functional componenets */}
@@ -37,7 +41,7 @@ useEffect(() => {
       <Footer></Footer>
     </div>
     </UserContext.Provider>
-          
+    </Provider>
   );
 };
 
@@ -61,6 +65,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
       {
         path: "/resturants/:resId",

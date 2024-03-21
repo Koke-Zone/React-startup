@@ -3,12 +3,16 @@ import logo from "../../assets/images/logo.png";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "./utilis/useOnlineStatus";
 import UserContext from "./utilis/userContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [loginbtn, setloginbtn] = useState("Login");
   const status = useOnlineStatus();
 
-  const {loggedUser} = useContext(UserContext);
+  const { loggedUser } = useContext(UserContext);
+
+  const itemsLength = useSelector((store) => store.cart.item);
+  console.log(itemsLength);
 
   return (
     <header className="header flex items-center justify-between bg-cyan-700">
@@ -78,6 +82,14 @@ const Header = () => {
             >
               {loginbtn}
             </button>
+            <li className="p-2 m-2">
+              <Link
+                to="/cart"
+                className="font-semibold text-yellow-50 border-transparent pb-2 border-b-2 hover:border-customPink"
+              >
+                Cart ({itemsLength.length})
+              </Link>
+            </li>
             <li className="p-2 m-2">
               <span className="font-semibold text-yellow-50">{loggedUser}</span>
             </li>
