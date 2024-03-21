@@ -34,3 +34,6 @@
  # episode 11
    https://docs.google.com/document/d/1nuhaQEzOLe3QYnqmJfpl9bCW0mqT4zVcVfhkAjMnD4Y/edit?usp=sharing
    
+ # episode 12
+   https://docs.google.com/document/d/1HuMbnyYkiavvhyjKCOFB3dIQ1l0O93jMIZvd_Zqxwww/edit?usp=sharing
+   

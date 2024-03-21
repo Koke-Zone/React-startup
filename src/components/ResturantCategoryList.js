@@ -1,5 +1,13 @@
 import { RES_URL_PIC } from "../components/utilis/constaints";
+import { useDispatch } from "react-redux";
+import { addItems } from "./utilis/cartSlice";
 const ResturantCategoryList = ({ dataList }) => {
+
+  const dispatchAction = useDispatch();
+  const dispatchhandle = (m) => {
+    dispatchAction(addItems(m));
+  }
+
   return (
     <div className="acc-a shadow-md shadow-zinc-500">
       {dataList.map((m) => ( 
@@ -22,7 +30,9 @@ const ResturantCategoryList = ({ dataList }) => {
               height="100"
               className="rounded-md h-100 w-150"
             /> 
-            <button className="absolute bg-customPink text-yellow-50 font-semibold w-2/12 bottom-3 right-4 text-sm py-2 rounded-sm"> Add + </button>
+            <button className="absolute bg-customPink text-yellow-50 font-semibold w-2/12 bottom-3 right-4 text-sm py-2 rounded-sm"
+            onClick={()=>dispatchhandle(m)}
+            > Add 🙂 </button>
           </div>
         </div>
       ))}
